@@ -22,6 +22,7 @@ import theme from "./src/styles/theme";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { View } from "react-native";
+import BottomHeader from "./src/components/BottomHeader";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -44,8 +45,8 @@ export default function App() {
   }
 
   return (
-    <View onLayout={onLayoutRootView} style={{ flex: 1 }}>
-      <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
+      <View onLayout={onLayoutRootView} style={{ flex: 1 }}>
         <NavigationContainer>
           <Stack.Navigator initialRouteName="Home">
             <Stack.Screen name="Home" component={HomeScreen} />
@@ -53,8 +54,9 @@ export default function App() {
             <Stack.Screen name="Players" component={PlayersScreen} />
             <Stack.Screen name="Matches" component={MatchesScreen} />
           </Stack.Navigator>
+          <BottomHeader />
         </NavigationContainer>
-      </ThemeProvider>
-    </View>
+      </View>
+    </ThemeProvider>
   );
 }
