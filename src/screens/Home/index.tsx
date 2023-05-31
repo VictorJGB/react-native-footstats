@@ -1,13 +1,23 @@
 import React from "react";
 import { Container, Title } from "./styles";
+import { useNavigation } from "@react-navigation/native";
+import { StackTypes } from "../../@types/stackTypes";
+import { Button } from "react-native";
 
 type Props = {};
 
 const HomeScreen = (props: Props) => {
+  const navigation = useNavigation<StackTypes>();
+
   return (
     <Container>
       <Title>Home</Title>
-      <button onClick={() => {}}>Teams Screen</button>
+      <Button
+        onPress={() => {
+          navigation.navigate("Teams");
+        }}
+        title="Teams"
+      />
     </Container>
   );
 };
