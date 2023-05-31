@@ -8,7 +8,7 @@ import { StackTypes } from "../../@types/stackTypes";
 
 type Props = {};
 
-const BottomHeader = (props: Props) => {
+const Navbar = (props: Props) => {
   const navigation = useNavigation<StackTypes>();
 
   return (
@@ -45,4 +45,4 @@ const BottomHeader = (props: Props) => {
   );
 };
 
-export default BottomHeader;
+export default Navbar;

@@ -14,12 +14,6 @@ const TeamsScreen = (props: Props) => {
   return (
     <Container>
       <Text>TeamsScreen</Text>
-      <Button
-        onPress={() => {
-          navigation.goBack();
-        }}
-        title="Go Back"
-      />
     </Container>
   );
 };
