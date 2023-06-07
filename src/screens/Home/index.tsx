@@ -2,19 +2,14 @@ import React from "react";
 
 import { Text } from "react-native";
 
-import {
-  Container,
-  Title,
-  Subtitle,
-  TitleContainer,
-  ButtonsContainer,
-  HomeBtn,
-} from "./styles";
+import { Container, TitleContainer, ButtonsContainer, HomeBtn } from "./styles";
 
 import { useNavigation } from "@react-navigation/native";
 
 import { StackTypes } from "../../@types/stackTypes";
 import theme from "../../styles/theme";
+import Title from "../../components/Title";
+import Subtitle from "../../components/Subtitle";
 
 type Props = {};
 

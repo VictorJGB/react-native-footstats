@@ -46,9 +46,12 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <View onLayout={onLayoutRootView} style={{ flex: 1 }}>
+      <View
+        onLayout={onLayoutRootView}
+        style={{ flex: 1, backgroundColor: "#FFF" }}
+      >
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="Home">
+          <Stack.Navigator initialRouteName="Teams">
             <Stack.Screen name="Home" component={HomeScreen} />
             <Stack.Screen name="Teams" component={TeamsScreen} />
             <Stack.Screen name="Players" component={PlayersScreen} />

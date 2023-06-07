@@ -27,20 +27,6 @@ export const ButtonsContainer = styled.View`
   justify-content: space-around;
 `;
 
-export const Title = styled.Text`
-  color: ${({ theme }) => theme.colors.black};
-  font-family: ${({ theme }) => theme.fonts.bold};
-  font-size: 24px;
-  text-align: center;
-`;
-
-export const Subtitle = styled.Text`
-  color: ${({ theme }) => theme.colors.black};
-  font-family: ${({ theme }) => theme.fonts.medium};
-  font-size: 20px;
-  text-align: center;
-`;
-
 export const HomeBtn = styled(PrimaryButton)`
   width: 180px;
   height: 60px;
