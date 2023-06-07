@@ -8,13 +8,13 @@ import {
   Subtitle,
   TitleContainer,
   ButtonsContainer,
+  HomeBtn,
 } from "./styles";
 
 import { useNavigation } from "@react-navigation/native";
 
 import { StackTypes } from "../../@types/stackTypes";
 import theme from "../../styles/theme";
-import PrimaryButton from "../../components/PrimaryButton";
 
 type Props = {};
 
@@ -31,21 +31,21 @@ const HomeScreen = (props: Props) => {
         <Subtitle>Seu aplicativo de estatísticas esportivas</Subtitle>
       </TitleContainer>
       <ButtonsContainer>
-        <PrimaryButton
+        <HomeBtn
           btnTitle="Times"
           iconName="group"
           onBtnPress={() => {
             navigation.navigate("Teams");
           }}
         />
-        <PrimaryButton
+        <HomeBtn
           btnTitle="Jogadores"
           iconName="person"
           onBtnPress={() => {
             navigation.navigate("Players");
           }}
         />
-        <PrimaryButton
+        <HomeBtn
           btnTitle="Partidas"
           iconName="date-range"
           onBtnPress={() => {

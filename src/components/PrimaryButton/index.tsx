@@ -1,4 +1,9 @@
-import { ColorValue, GestureResponderEvent } from "react-native";
+import {
+  ColorValue,
+  GestureResponderEvent,
+  RegisteredStyle,
+  ViewStyle,
+} from "react-native";
 
 import React from "react";
 
@@ -12,6 +17,7 @@ type Props = {
   iconName?: string;
   iconSize?: number;
   iconColor?: number | ColorValue;
+  style?: RegisteredStyle<ViewStyle>;
   onBtnPress?: (event: GestureResponderEvent) => void;
 };
 
@@ -19,6 +25,7 @@ const PrimaryButton = (props: Props) => {
   return (
     <StyledButton
       title={props.btnTitle}
+      style={props.style}
       onPress={props.onBtnPress}
       trailing={
         props.iconName ? (
