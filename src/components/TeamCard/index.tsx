@@ -29,7 +29,7 @@ type Props = {
   statsDrawn: number;
 };
 
-const Card = (props: Props) => {
+const TeamsCard = (props: Props) => {
   return (
     <Container>
       {/* Team Info */}
@@ -75,4 +75,4 @@ const Card = (props: Props) => {
   );
 };
 
-export default Card;
+export default TeamsCard;

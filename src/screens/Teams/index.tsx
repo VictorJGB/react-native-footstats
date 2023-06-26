@@ -1,5 +1,4 @@
 import React from "react";
-import { TitleContainer } from "./styles";
 
 import { useNavigation } from "@react-navigation/native";
 
@@ -7,7 +6,7 @@ import { StackTypes } from "../../@types/stackTypes";
 
 import Title from "../../components/Title";
 import Subtitle from "./../../components/Subtitle";
-import Card from "../../components/TeamCard";
+import TeamsCard from "../../components/TeamCard";
 
 import theme from "../../styles/theme";
 import { Flex } from "@react-native-material/core";
@@ -41,7 +40,7 @@ const TeamsScreen = (props: Props) => {
       </Flex>
       {/* Cards Container */}
       <Flex w={"100%"} items="center" justify="center" style={{ gap: 30 }}>
-        <Card
+        <TeamsCard
           image={BarcelonaImg}
           title="Barcelona"
           subtitle="1º Lugar"
@@ -50,7 +49,7 @@ const TeamsScreen = (props: Props) => {
           statsDefeat={4}
           statsDrawn={3}
         />
-        <Card
+        <TeamsCard
           image={MadridImg}
           title="Real Madrid"
           subtitle="2º Lugar"
