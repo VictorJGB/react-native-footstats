@@ -17,6 +17,7 @@ import {
   ItemContent,
 } from "./styles";
 import { ImageSourcePropType } from "react-native";
+import { Flex } from "@react-native-material/core";
 
 type Props = {
   image: ImageSourcePropType;
@@ -33,9 +34,13 @@ const Card = (props: Props) => {
     <Container>
       {/* Team Info */}
       <TeamContainer>
-        <Logo source={props.image} />
-        <TeamTitle>{props.title}</TeamTitle>
-        <TeamSubtitle>{props.subtitle}</TeamSubtitle>
+        <Flex basis={"30%"} grow={1} shrink={1} items="center" justify="center">
+          <Logo source={props.image} />
+        </Flex>
+        <Flex basis={"20%"} grow={1} shrink={1} items="center" justify="center">
+          <TeamTitle>{props.title}</TeamTitle>
+          <TeamSubtitle>{props.subtitle}</TeamSubtitle>
+        </Flex>
       </TeamContainer>
 
       {/* Team Stats Info */}

@@ -7,7 +7,7 @@ export const Container = styled.View`
   align-items: center;
 
   width: 300px;
-  height: 330px;
+  height: 350px;
 
   border: 1px solid ${({ theme }) => theme.colors.secondary};
   border-radius: 16px;
@@ -24,14 +24,12 @@ export const TeamContainer = styled.View`
   gap: 8px;
 
   width: 100%;
-  height: 50%;
 
   background: ${({ theme }) => theme.colors.secondary};
 `;
 
 export const Logo = styled.Image`
-  max-width: 64px;
-  max-height: 64px;
+  max-width: 100%;
 `;
 
 export const TeamTitle = styled.Text`

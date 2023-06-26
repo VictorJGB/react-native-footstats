@@ -17,31 +17,49 @@ type Props = {};
 
 const TeamsScreen = (props: Props) => {
   const navigation = useNavigation<StackTypes>();
-  const TeamImg = require("../../assets/barcelona.png");
+  const BarcelonaImg = require("../../assets/barcelona.png");
+  const MadridImg = require("../../assets/realmadrid.png");
 
   return (
     <ScrollView
       contentContainerStyle={{
-        flex: 1,
-        justifyContent: "center",
         alignItems: "center",
+        justifyContent: "center",
       }}
     >
-      <Flex fill={true} direction="column" justify="center" items="center">
+      <Flex
+        w={"100%"}
+        h={"20%"}
+        direction="column"
+        justify="center"
+        items="center"
+      >
         <Title style={{ color: theme.colors.primary }}>
           Estatísticas de Times
         </Title>
         <Subtitle>La Liga</Subtitle>
       </Flex>
-      <Card
-        image={TeamImg}
-        title="Barcelona"
-        subtitle="1º Lugar"
-        statsPTS={82}
-        statsVictory={26}
-        statsDefeat={4}
-        statsDrawn={3}
-      />
+      {/* Cards Container */}
+      <Flex w={"100%"} items="center" justify="center" style={{ gap: 30 }}>
+        <Card
+          image={BarcelonaImg}
+          title="Barcelona"
+          subtitle="1º Lugar"
+          statsPTS={82}
+          statsVictory={26}
+          statsDefeat={4}
+          statsDrawn={3}
+        />
+        <Card
+          image={MadridImg}
+          title="Real Madrid"
+          subtitle="2º Lugar"
+          statsPTS={80}
+          statsVictory={20}
+          statsDefeat={5}
+          statsDrawn={10}
+        />
+      </Flex>
     </ScrollView>
   );
 };
