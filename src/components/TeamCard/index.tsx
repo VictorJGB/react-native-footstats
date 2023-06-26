@@ -16,19 +16,26 @@ import {
   ItemTitle,
   ItemContent,
 } from "./styles";
+import { ImageSourcePropType } from "react-native";
 
-type Props = {};
+type Props = {
+  image: ImageSourcePropType;
+  title: string;
+  subtitle: string;
+  statsPTS: number;
+  statsVictory: number;
+  statsDefeat: number;
+  statsDrawn: number;
+};
 
 const Card = (props: Props) => {
-  const BarcelonaImg = require("../../assets/barcelona.png");
-
   return (
     <Container>
       {/* Team Info */}
       <TeamContainer>
-        <Logo source={BarcelonaImg} />
-        <TeamTitle>Barcelona F.C</TeamTitle>
-        <TeamSubtitle>1º lugar</TeamSubtitle>
+        <Logo source={props.image} />
+        <TeamTitle>{props.title}</TeamTitle>
+        <TeamSubtitle>{props.subtitle}</TeamSubtitle>
       </TeamContainer>
 
       {/* Team Stats Info */}
@@ -36,7 +43,7 @@ const Card = (props: Props) => {
         {/* Points */}
         <PtsContainer>
           <PtsTitle>Pontos</PtsTitle>
-          <PtsContent>82 pontos</PtsContent>
+          <PtsContent>{props.statsPTS}</PtsContent>
         </PtsContainer>
 
         <DivisionLine />
@@ -45,17 +52,17 @@ const Card = (props: Props) => {
           {/* Victory */}
           <StatsItem>
             <ItemTitle>V</ItemTitle>
-            <ItemContent>26</ItemContent>
+            <ItemContent>{props.statsVictory}</ItemContent>
           </StatsItem>
           {/* Defeat */}
           <StatsItem>
             <ItemTitle>D</ItemTitle>
-            <ItemContent>4</ItemContent>
+            <ItemContent>{props.statsDefeat}</ItemContent>
           </StatsItem>
           {/* Draw */}
           <StatsItem>
             <ItemTitle>E</ItemTitle>
-            <ItemContent>3</ItemContent>
+            <ItemContent>{props.statsDrawn}</ItemContent>
           </StatsItem>
         </StatsGroup>
       </StatsContainer>

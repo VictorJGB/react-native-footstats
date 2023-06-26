@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 
-import { Text } from "react-native";
+import { ScrollView, Text } from "react-native";
 
 import HomeScreen from "./src/screens/Home";
 import TeamsScreen from "./src/screens/Teams";
@@ -21,7 +21,7 @@ import theme from "./src/styles/theme";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { View } from "react-native";
+import { SafeAreaView } from "react-native";
 import Navbar from "./src/components/Navbar";
 
 export default function App() {
@@ -46,7 +46,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <View
+      <SafeAreaView
         onLayout={onLayoutRootView}
         style={{ flex: 1, backgroundColor: "#FFF" }}
       >
@@ -59,7 +59,7 @@ export default function App() {
           </Stack.Navigator>
           <Navbar />
         </NavigationContainer>
-      </View>
+      </SafeAreaView>
     </ThemeProvider>
   );
 }

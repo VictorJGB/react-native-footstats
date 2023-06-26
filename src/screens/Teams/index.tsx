@@ -10,28 +10,38 @@ import Subtitle from "./../../components/Subtitle";
 import Card from "../../components/TeamCard";
 
 import theme from "../../styles/theme";
+import { Flex } from "@react-native-material/core";
 import { ScrollView } from "react-native";
 
 type Props = {};
 
 const TeamsScreen = (props: Props) => {
   const navigation = useNavigation<StackTypes>();
+  const TeamImg = require("../../assets/barcelona.png");
 
   return (
     <ScrollView
       contentContainerStyle={{
         flex: 1,
-        alignContent: "center",
+        justifyContent: "center",
         alignItems: "center",
       }}
     >
-      <TitleContainer>
+      <Flex fill={true} direction="column" justify="center" items="center">
         <Title style={{ color: theme.colors.primary }}>
           Estatísticas de Times
         </Title>
         <Subtitle>La Liga</Subtitle>
-      </TitleContainer>
-      <Card />
+      </Flex>
+      <Card
+        image={TeamImg}
+        title="Barcelona"
+        subtitle="1º Lugar"
+        statsPTS={82}
+        statsVictory={26}
+        statsDefeat={4}
+        statsDrawn={3}
+      />
     </ScrollView>
   );
 };

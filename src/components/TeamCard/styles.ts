@@ -10,6 +10,8 @@ export const Container = styled.View`
   height: 330px;
 
   border: 1px solid ${({ theme }) => theme.colors.secondary};
+  border-radius: 16px;
+  overflow: hidden;
 `;
 
 export const TeamContainer = styled.View`
