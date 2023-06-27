@@ -7,8 +7,8 @@ import PlayerCard from "../../components/PlayerCard";
 type Props = {};
 
 const PlayersScreen = (props: Props) => {
-  const BarcelonaImg = require("../../assets/barcelona.png");
-  const MadridImg = require("../../assets/realmadrid.png");
+  const MessiPng = require("../../assets/messi.png");
+  const PlayerImg = require("../../assets/player.png");
 
   return (
     <ScrollView>
@@ -30,7 +30,7 @@ const PlayersScreen = (props: Props) => {
       </Flex>
       <Flex w={"100%"} items="center" justify="center" style={{ gap: 30 }}>
         <PlayerCard
-          image={BarcelonaImg}
+          image={MessiPng}
           title="Jogador"
           subtitle="Nº 10"
           statsScore={90}
@@ -40,7 +40,7 @@ const PlayersScreen = (props: Props) => {
           statsYellowCards={5}
         />
         <PlayerCard
-          image={MadridImg}
+          image={PlayerImg}
           title="Jogador"
           subtitle="Nº 19"
           statsScore={79}
