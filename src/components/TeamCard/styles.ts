@@ -20,10 +20,11 @@ export const TeamContainer = styled.View`
   justify-content: center;
   align-items: center;
 
-  padding: 40px;
+  padding: 20px;
   gap: 8px;
 
   width: 100%;
+  height: 50%;
 
   background: ${({ theme }) => theme.colors.secondary};
 `;

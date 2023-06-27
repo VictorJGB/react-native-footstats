@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { useNavigation } from "@react-navigation/native";
 
@@ -20,8 +20,7 @@ import { useTeams } from "../../hooks/useTeams";
 type Props = {};
 
 const TeamsScreen = (props: Props) => {
-  const { data: teams } = useTeams<Teams[]>();
-
+  const { data: teams } = useTeams<Teams[] | null>();
   const navigation = useNavigation<StackTypes>();
   return (
     <ScrollView
@@ -30,13 +29,7 @@ const TeamsScreen = (props: Props) => {
         justifyContent: "center",
       }}
     >
-      <Flex
-        w={"100%"}
-        h={"20%"}
-        direction="column"
-        justify="center"
-        items="center"
-      >
+      <Flex w={"100%"} direction="column" justify="center" items="center">
         <Title style={{ color: theme.colors.primary }}>
           Estatísticas de Times
         </Title>
@@ -44,19 +37,18 @@ const TeamsScreen = (props: Props) => {
       </Flex>
       {/* Cards Container */}
       <Flex w={"100%"} items="center" justify="center" style={{ gap: 30 }}>
-        {teams != null
-          ? teams.map((team) => {
-              <TeamCard
-                image={team.team_badge}
-                title={team.team_name}
-                subtitle={team.overall_league_position}
-                statsPTS={team.overall_league_PTS}
-                statsVictory={team.overall_league_W}
-                statsDefeat={team.overall_league_L}
-                statsDrawn={team.overall_league_D}
-              />;
-            })
-          : null}
+        {teams?.map((team: Teams, index) => (
+          <TeamCard
+            key={index}
+            image={team.team_badge}
+            title={team.team_name}
+            subtitle={team.overall_league_position}
+            statsPTS={team.overall_league_PTS}
+            statsVictory={team.overall_league_W}
+            statsDefeat={team.overall_league_L}
+            statsDrawn={team.overall_league_D}
+          />
+        ))}
       </Flex>
     </ScrollView>
   );

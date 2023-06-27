@@ -15,7 +15,7 @@ export function useTeams<T = unknown>() {
         action: "get_standings",
         APIkey: apiKey,
         team_id: "",
-        league_id: 152, //Premier League
+        league_id: 4, //UEFA Champions League
       },
     };
 

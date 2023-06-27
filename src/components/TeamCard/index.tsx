@@ -16,17 +16,17 @@ import {
   ItemTitle,
   ItemContent,
 } from "./styles";
-import { ImageSourcePropType } from "react-native";
+import { ImageURISource } from "react-native";
 import { Flex } from "@react-native-material/core";
 
 type Props = {
-  image: ImageSourcePropType;
+  image?: string;
   title: string;
   subtitle: string;
-  statsPTS: number;
-  statsVictory: number;
-  statsDefeat: number;
-  statsDrawn: number;
+  statsPTS: string;
+  statsVictory: string;
+  statsDefeat: string;
+  statsDrawn: string;
 };
 
 const TeamCard = (props: Props) => {
@@ -34,10 +34,10 @@ const TeamCard = (props: Props) => {
     <Container>
       {/* Team Info */}
       <TeamContainer>
-        <Flex basis={"30%"} grow={1} shrink={1} items="center" justify="center">
-          <Logo source={props.image} />
+        <Flex items="center" justify="center">
+          {props.image && <Logo source={{ uri: props.image }} />}
         </Flex>
-        <Flex basis={"20%"} grow={1} shrink={1} items="center" justify="center">
+        <Flex items="center" justify="center">
           <TeamTitle>{props.title}</TeamTitle>
           <TeamSubtitle>{props.subtitle}</TeamSubtitle>
         </Flex>
