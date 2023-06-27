@@ -6,19 +6,23 @@ import { StackTypes } from "../../@types/stackTypes";
 
 import Title from "../../components/Title";
 import Subtitle from "./../../components/Subtitle";
-import TeamsCard from "../../components/TeamCard";
+import TeamCard from "../../components/TeamCard";
 
 import theme from "../../styles/theme";
+
 import { Flex } from "@react-native-material/core";
+
 import { ScrollView } from "react-native";
+
+import Teams from "../../interfaces/Teams";
+import { useTeams } from "../../hooks/useTeams";
 
 type Props = {};
 
 const TeamsScreen = (props: Props) => {
-  const navigation = useNavigation<StackTypes>();
-  const BarcelonaImg = require("../../assets/barcelona.png");
-  const MadridImg = require("../../assets/realmadrid.png");
+  const { data: teams } = useTeams<Teams[]>();
 
+  const navigation = useNavigation<StackTypes>();
   return (
     <ScrollView
       contentContainerStyle={{
@@ -40,24 +44,19 @@ const TeamsScreen = (props: Props) => {
       </Flex>
       {/* Cards Container */}
       <Flex w={"100%"} items="center" justify="center" style={{ gap: 30 }}>
-        <TeamsCard
-          image={BarcelonaImg}
-          title="Barcelona"
-          subtitle="1º Lugar"
-          statsPTS={82}
-          statsVictory={26}
-          statsDefeat={4}
-          statsDrawn={3}
-        />
-        <TeamsCard
-          image={MadridImg}
-          title="Real Madrid"
-          subtitle="2º Lugar"
-          statsPTS={80}
-          statsVictory={20}
-          statsDefeat={5}
-          statsDrawn={10}
-        />
+        {teams != null
+          ? teams.map((team) => {
+              <TeamCard
+                image={team.team_badge}
+                title={team.team_name}
+                subtitle={team.overall_league_position}
+                statsPTS={team.overall_league_PTS}
+                statsVictory={team.overall_league_W}
+                statsDefeat={team.overall_league_L}
+                statsDrawn={team.overall_league_D}
+              />;
+            })
+          : null}
       </Flex>
     </ScrollView>
   );
