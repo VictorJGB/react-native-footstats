@@ -10,7 +10,7 @@ import TeamCard from "../../components/TeamCard";
 
 import theme from "../../styles/theme";
 
-import { Flex } from "@react-native-material/core";
+import { ActivityIndicator, Flex, Text } from "@react-native-material/core";
 
 import { ScrollView } from "react-native";
 
@@ -20,7 +20,7 @@ import { useTeams } from "../../hooks/useTeams";
 type Props = {};
 
 const TeamsScreen = (props: Props) => {
-  const { data: teams } = useTeams<Teams[] | null>();
+  const { data: teams, isLoading } = useTeams<Teams[] | null>();
   const navigation = useNavigation<StackTypes>();
   return (
     <ScrollView
@@ -37,6 +37,9 @@ const TeamsScreen = (props: Props) => {
       </Flex>
       {/* Cards Container */}
       <Flex w={"100%"} items="center" justify="center" style={{ gap: 30 }}>
+        {isLoading && (
+          <ActivityIndicator size="large" color={theme.colors.primary} />
+        )}
         {teams?.map((team: Teams, index) => (
           <TeamCard
             key={index}

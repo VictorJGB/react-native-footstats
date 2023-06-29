@@ -9,3 +9,5 @@ export interface Players {
   player_yellow_cards: string;
   player_red_cards: string;
 }
+
+export default Players;

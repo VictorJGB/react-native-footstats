@@ -1,18 +1,33 @@
 import { ScrollView } from "react-native";
-import React from "react";
+
+import React, { useEffect, useState } from "react";
+
 import { Flex, Text } from "@react-native-material/core";
+
+import RNPickerSelect, { Item } from "react-native-picker-select";
+
 import theme from "../../styles/theme";
+
 import PlayerCard from "../../components/PlayerCard";
+
+import { usePlayers } from "../../hooks/usePlayers";
+
+import Players from "../../interfaces/Players";
+import Teams from "../../interfaces/Teams";
+
+import { useTeams } from "../../hooks/useTeams";
 
 type Props = {};
 
 const PlayersScreen = (props: Props) => {
   const MessiPng = require("../../assets/messi.png");
-  const PlayerImg = require("../../assets/player.png");
 
   return (
-    <ScrollView>
+    <ScrollView
+      contentContainerStyle={{ alignItems: "center", justifyContent: "center" }}
+    >
       <Flex w={"100%"} items="center" justify="center">
+        {/* Title */}
         <Text
           variant="h1"
           color={theme.colors.primary}
@@ -28,6 +43,7 @@ const PlayersScreen = (props: Props) => {
           La Liga
         </Text>
       </Flex>
+      {/* Cards Container */}
       <Flex w={"100%"} items="center" justify="center" style={{ gap: 30 }}>
         <PlayerCard
           image={MessiPng}
@@ -38,16 +54,6 @@ const PlayersScreen = (props: Props) => {
           statsMatchPlayed={20}
           statsRedCards={3}
           statsYellowCards={5}
-        />
-        <PlayerCard
-          image={PlayerImg}
-          title="Jogador"
-          subtitle="Nº 19"
-          statsScore={79}
-          statsGoalsMarked={9}
-          statsMatchPlayed={30}
-          statsRedCards={1}
-          statsYellowCards={2}
         />
       </Flex>
     </ScrollView>

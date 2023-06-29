@@ -16,7 +16,6 @@ import {
   ItemTitle,
   ItemContent,
 } from "./styles";
-import { ImageURISource } from "react-native";
 import { Flex } from "@react-native-material/core";
 
 type Props = {

@@ -51,7 +51,7 @@ export default function App() {
         style={{ flex: 1, backgroundColor: "#FFF" }}
       >
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="Matches">
+          <Stack.Navigator initialRouteName="Home">
             <Stack.Screen name="Home" component={HomeScreen} />
             <Stack.Screen name="Teams" component={TeamsScreen} />
             <Stack.Screen name="Players" component={PlayersScreen} />
